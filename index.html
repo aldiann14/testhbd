@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Selamat Ulang Tahun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="birthday.css" />
+</head>
+<body>
+
+<audio id="bgm" loop autoplay preload="auto"
+  src="https://cdn.pixabay.com/audio/2022/10/18/audio_31c2730e64.mp3"></audio>
+<button id="audioToggle" class="audio-toast" type="button" aria-label="Toggle music">
+  <span class="audio-dot"></span><span id="audioLabel">music on</span>
+</button>
+
+<main class="deck" id="deck">
+
+  <section class="panel active" data-panel="hero">
+    <div class="panel__inner panel__inner--center">
+      <div class="eyebrow anim-fade">a little click for you · 04 · 23</div>
+      <div class="bubble bubble--title"><h1 class="title anim">Selamat Ulang Tahun.</h1></div>
+      <div class="bubble"><p class="caption anim">// klik kanan layar untuk membuka cerita ini, perlahan.</p></div>
+      <div class="click-hint anim-fade">
+        <div class="caption">klik kanan untuk lanjut</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" data-panel="s1">
+    <div class="panel__inner"><div class="row">
+      <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1200" alt="sparkler"></div>
+      <div class="caption-wrap">
+        <div class="bubble bubble--block bubble--lg"><h2 class="heading anim">Hari ini milikmu.</h2></div>
+        <div class="bubble bubble--block"><p class="caption anim">// scene_01 — sebuah percikan kecil, sebuah harapan besar. selamat ulang tahun.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="panel" data-panel="puzzle">
+    <div class="panel__inner panel__inner--center">
+      <div class="eyebrow anim-fade">interlude · puzzle</div>
+      <div class="bubble bubble--title"><h2 class="heading anim">Susun kembali kenangannya.</h2></div>
+      <div class="bubble bubble--block"><p class="caption anim">// geser ubin satu per satu sampai gambarnya utuh kembali.</p></div>
+      <div class="puzzle" id="puzzle" data-image="img/foto1.jpg" data-size="3"></div>
+      <div class="puzzle-actions">
+        <button type="button" id="puzzleShuffle" class="puzzle-shuffle">acak ulang</button>
+        <button type="button" id="puzzleGiveup" class="puzzle-giveup">selesaikan puzzle</button>
+      </div>
+      <div class="puzzle-quote" id="puzzleQuote" aria-hidden="true">
+        <p class="quote-text">"Seperti puzzle ini, hubungan kita mungkin sempat berantakan, tapi selalu kita satukan lagi."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" data-panel="s2">
+    <div class="panel__inner"><div class="row row--reverse">
+      <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1200" alt="cake"></div>
+      <div class="caption-wrap">
+        <div class="bubble bubble--block bubble--lg"><h2 class="heading anim">Tiup lilinnya, pelan-pelan.</h2></div>
+        <div class="bubble bubble--block"><p class="caption anim">// scene_02 — semoga setiap doa yang kamu bisikkan, perlahan menemukan jalannya pulang.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ===== SOLVE PANEL (single column: GIF+tombol → foto) ===== -->
+  <section class="panel" data-panel="solve">
+    <div class="panel__inner solve-inner">
+      <div class="bubble bubble--title solve-title-wrap">
+        <h2 class="heading anim">Setiap masalah punya jalan keluar.</h2>
+      </div>
+      <div class="solve-stage">
+        <div class="solve-media">
+          <div class="solve-gif">
+            <img src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" alt="tarik nafas">
+          </div>
+          <button type="button" id="solveBtn" class="solve-btn">Selesaiin masalah ini</button>
+        </div>
+        <div class="solve-chat" id="solveChat"></div>
+      </div>
+      <div class="solve-photo">
+        <img class="solve-photo__img solve-photo__before"
+             src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=1000&fit=crop" alt="sebelum">
+        <img class="solve-photo__img solve-photo__after"
+             src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop" alt="sesudah">
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" data-panel="s3">
+    <div class="panel__inner"><div class="row">
+      <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200" alt="balloons"></div>
+      <div class="caption-wrap">
+        <div class="bubble bubble--block bubble--lg"><h2 class="heading anim">Ringan seperti hari ini.</h2></div>
+        <div class="bubble bubble--block"><p class="caption anim">// scene_03 — semoga harimu seringan balon-balon ini, dan setinggi mimpi yang kamu peluk.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="panel" data-panel="s4">
+    <div class="panel__inner"><div class="row row--reverse">
+      <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=1200" alt="gift"></div>
+      <div class="caption-wrap">
+        <div class="bubble bubble--block bubble--lg"><h2 class="heading anim">Hadiah terbaik adalah waktu.</h2></div>
+        <div class="bubble bubble--block"><p class="caption anim">// scene_04 — terima kasih telah menjadi cerita yang ingin terus dibaca, halaman demi halaman.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="panel" data-panel="s5">
+    <div class="panel__inner"><div class="row">
+      <div class="photo-wrap"><img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1200" alt="flowers"></div>
+      <div class="caption-wrap">
+        <div class="bubble bubble--block bubble--lg"><h2 class="heading anim">Tumbuh, mekar, bercahaya.</h2></div>
+        <div class="bubble bubble--block"><p class="caption anim">// scene_05 — tahun yang baru, mekarmu yang baru. selamat menjadi versi terbaik dari dirimu.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="panel" data-panel="final">
+    <div class="panel__inner panel__inner--center">
+      <div class="bubble bubble--title"><h2 class="title anim">Sampai jumpa di tahun depan.</h2></div>
+      <div class="bubble"><p class="caption anim">// dibuat dengan sedikit gerak, banyak rasa.</p></div>
+    </div>
+  </section>
+
+  <section class="panel panel--claim" data-panel="claim">
+    <div class="panel__inner panel__inner--center">
+      <div class="eyebrow anim-fade">one more thing</div>
+      <div class="bubble bubble--title"><h2 class="heading anim">Hadiahmu sudah terkumpul.</h2></div>
+      <div class="bubble bubble--block">
+        <p class="caption anim">// semakin lama kamu menikmati ceritanya, semakin besar hadiah yang menanti. tekan tombol untuk membukanya.</p>
+      </div>
+      <button id="claimBtn" type="button" class="claim-btn">
+        <span class="claim-btn__shine"></span>
+        <span class="claim-btn__label" id="claimBtnLabel">Buka Hadiahmu</span>
+        <span class="claim-btn__arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="caption claim-note">// proses instan. notifikasi akan dikirim ke HP-mu.</div>
+    </div>
+  </section>
+
+</main>
+
+<button id="navPrev" class="nav-zone nav-zone--prev" type="button" aria-label="Halaman sebelumnya"><span class="nav-hint">←</span></button>
+<button id="navNext" class="nav-zone nav-zone--next" type="button" aria-label="Halaman berikutnya"><span class="nav-hint">→</span></button>
+
+<div class="indicator">
+  <span id="curIdx">1</span><span class="indicator__sep">/</span><span id="totalIdx">10</span>
+</div>
+
+<iframe name="claimSink" style="display:none" aria-hidden="true"></iframe>
+<form id="claimForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdPNy5syOkE9qZOLVX85GZtgECObBZ673eSmXQVvMaGC4RfiQ/formResponse" method="POST" target="claimSink" style="display:none">
+  <input type="text" name="entry.930618549" id="claimAmount" value="">
+</form>
+
+<div id="claimSuccess" class="claim-overlay" aria-hidden="true">
+  <div class="claim-modal">
+    <div class="claim-modal__emoji">🎉</div>
+    <h3 class="claim-modal__title">Selamat!</h3>
+    <p class="claim-modal__text" id="claimModalText">Klaim-mu berhasil dikirim.<br/>Cek notifikasi HP-mu sebentar lagi ya.</p>
+    <button type="button" id="claimClose" class="claim-modal__close">tutup</button>
+  </div>
+</div>
+
+<script src="birthday.js"></script>
+</body>
+</html>
